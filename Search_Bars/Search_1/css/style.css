@@ -9,9 +9,9 @@
 /* ||Variables */
 :root {
   --BG: rgb(227, 228, 232);
-  --FG: #17181c;
-  --INPUT: #ffffff;
-  --PRIMARY: #255ff4;
+  --FG: rgb(23, 24, 28);
+  --INPUT: rgb(255, 255, 255);
+  --PRIMARY: rgb(37, 95, 244);
   --DUR: 1s;
   font-size: calc(16px + (24-16) * (100vw - 320px) / (1280 - 320));
 }
@@ -79,7 +79,47 @@ input:valid + .caret {
   transform: translate(0, -1em) rotate(-180deg) translate(7.5em, -0.25em);
 }
 
+input::-webkit-search-decoration{
+  -webkit-appearance: none;
+}
+
+label {
+  color: rgb(227, 228, 232);
+  overflow: hidden;
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+.caret {
+  background-color: currentColor;
+  border-radius: 0 0 0.125em 0.125em;
+  margin-bottom: -0.6em;
+  width: 0.25em;
+  height: 1em;
+  transform: translate(0, -1em) rotate(-45deg) 
+  translate(0, 0.875em);
+  transform-origin: 50% 0;
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {	
+	:root {
+		--BG: rgb(23, 24, 28);
+		--FG: rgb(227, 228, 232);
+		--INPUT: rgb(46, 49, 56);
+		--PRIMARY: rgb(85, 131, 246);
+	}
+}
+
 /* Animations */
-@keyframes showCaret {}
+@keyframes showCaret {
+  from {
+    caret-color: transparent;
+  }
+  to {
+    caret-color: var(--PRIMARY);
+  }
+}
 
 @keyframes handleToCaret {}
