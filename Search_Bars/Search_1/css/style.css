@@ -1,7 +1,85 @@
-*,
-*::after,
-*::before {
+/* || RESET */
+* {
+  border: 0;
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
+
+/* ||Variables */
+:root {
+  --BG: rgb(227, 228, 232);
+  --FG: #17181c;
+  --INPUT: #ffffff;
+  --PRIMARY: #255ff4;
+  --DUR: 1s;
+  font-size: calc(16px + (24-16) * (100vw - 320px) / (1280 - 320));
+}
+
+body,
+input {
+  color: var(--FG);
+  display: flex;
+  height: 100vh;
+}
+
+form,
+input,
+.caret {
+  margin: auto;
+}
+
+form {
+  position: relative;
+  width: 100%;
+  max-width: 17em;
+}
+
+input,
+.caret {
+  display: block;
+  transition: all calc(var(--DUR) * 0.5) linear;
+}
+
+input {
+  background: transparent;
+  border-radius: 50%;
+  box-shadow: 0 0 0 0.25em inset;
+  caret-color: var(--primary);
+  width: 2em;
+  height: 2em;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+input:focus,
+input:valid {
+  background: var(--INPUT);
+  border-radius: 0.25em;
+  box-shadow: none;
+  padding: 0.75em 1em;
+  transition-duration: calc(var(--DUR) * 0.25);
+  transition-delay: calc(var(--DUR) * 0.25);
+  width: 100%;
+  height: 3em;
+}
+
+input:focus {
+  animation: showCaret var(--DUR) steps(1);
+  outline: transparent;
+}
+
+input:focus + .caret,
+input:valid + .caret {
+  animation: handleToCaret var(--DUR) linear;
+  background: transparent;
+  width: 1px;
+  height: 1.5em;
+  transform: translate(0, -1em) rotate(-180deg) translate(7.5em, -0.25em);
+}
+
+/* Animations */
+@keyframes showCaret {}
+
+@keyframes handleToCaret {}
