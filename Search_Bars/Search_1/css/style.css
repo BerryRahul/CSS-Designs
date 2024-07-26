@@ -1,62 +1,53 @@
-/* || RESET */
 * {
   border: 0;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
-
-/* ||Variables */
 :root {
   --BG: rgb(227, 228, 232);
   --FG: rgb(23, 24, 28);
   --INPUT: rgb(255, 255, 255);
   --PRIMARY: rgb(37, 95, 244);
   --DUR: 1s;
-  font-size: calc(16px + (24 - 16)*(100vw - 320px)/(1280 - 320));
+  font-size: calc(16px + (24 - 16) * (100vw - 320px) / (1280 - 320));
 }
-
-body, input {
+body,
+input {
   color: var(--FG);
   font: 1em/1.5 Hind, sans-serif;
 }
-
 body {
-  color: var(--FG);
+  background: var(--BG);
   display: flex;
   height: 100vh;
 }
-
 form,
 input,
 .caret {
   margin: auto;
 }
-
 form {
   position: relative;
   width: 100%;
   max-width: 17em;
 }
-
 input,
 .caret {
   display: block;
   transition: all calc(var(--DUR) * 0.5) linear;
 }
-
 input {
   background: transparent;
   border-radius: 50%;
   box-shadow: 0 0 0 0.25em inset;
-  caret-color: var(--primary);
+  caret-color: var(--PRIMARY);
   width: 2em;
   height: 2em;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
 }
-
 input:focus,
 input:valid {
   background: var(--INPUT);
@@ -68,12 +59,10 @@ input:valid {
   width: 100%;
   height: 3em;
 }
-
 input:focus {
   animation: showCaret var(--DUR) steps(1);
   outline: transparent;
 }
-
 input:focus + .caret,
 input:valid + .caret {
   animation: handleToCaret var(--DUR) linear;
@@ -82,11 +71,9 @@ input:valid + .caret {
   height: 1.5em;
   transform: translate(0, -1em) rotate(-180deg) translate(7.5em, -0.25em);
 }
-
-input::-webkit-search-decoration{
+input::-webkit-search-decoration {
   -webkit-appearance: none;
 }
-
 label {
   color: rgb(227, 228, 232);
   overflow: hidden;
@@ -94,26 +81,24 @@ label {
   width: 0;
   height: 0;
 }
-
 .caret {
-  background-color: currentColor;
+  background: currentColor;
   border-radius: 0 0 0.125em 0.125em;
   margin-bottom: -0.6em;
   width: 0.25em;
   height: 1em;
-  transform: translate(0, -1em) rotate(-45deg) 
-  translate(0, 0.875em);
+  transform: translate(0, -1em) rotate(-45deg) translate(0, 0.875em);
   transform-origin: 50% 0;
 }
 
 /* Dark mode */
-@media (prefers-color-scheme: dark) {	
-	:root {
-		--BG: rgb(23, 24, 28);
-		--FG: rgb(227, 228, 232);
-		--INPUT: rgb(46, 49, 56);
-		--PRIMARY: rgb(85, 131, 246);
-	}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --BG: rgb(23, 24, 28);
+    --FG: rgb(227, 228, 232);
+    --INPUT: rgb(46, 49, 56);
+    --PRIMARY: rgb(85, 131, 246);
+  }
 }
 
 /* Animations */
@@ -125,7 +110,6 @@ label {
     caret-color: var(--PRIMARY);
   }
 }
-
 @keyframes handleToCaret {
   from {
     background: currentColor;
@@ -133,40 +117,36 @@ label {
     height: 1em;
     transform: translate(0, -1em) rotate(-45deg) translate(0, 0.875em);
   }
-
   25% {
     background: currentColor;
     width: 0.25em;
     height: 1em;
     transform: translate(0, -1em) rotate(-180deg) translate(0, 0.875em);
   }
-
-  50%, 62.5% {
+  50%,
+  62.5% {
     background: var(--PRIMARY);
     width: 1px;
     height: 1.5em;
-    transform: translate(0, -1em) rotate(-180deg) translate(7.5, 2.5em);
+    transform: translate(0, -1em) rotate(-180deg) translate(7.5em, 2.5em);
   }
-
-  75%, 99% {
+  75%,
+  99% {
     background: var(--PRIMARY);
     width: 1px;
     height: 1.5em;
     transform: translate(0, -1em) rotate(-180deg) translate(7.5em, -0.25em);
   }
-
   87.5% {
     background: var(--PRIMARY);
     width: 1px;
     height: 1.5em;
     transform: translate(0, -1em) rotate(-180deg) translate(7.5em, 0.125em);
   }
-
   to {
     background: transparent;
     width: 1px;
     height: 1.5em;
-    transform: translate(0,-1em) rotate(-180deg) translate(7.5em,-0.25em);
+    transform: translate(0, -1em) rotate(-180deg) translate(7.5em, -0.25em);
   }
-
 }
