@@ -13,11 +13,15 @@
   --INPUT: rgb(255, 255, 255);
   --PRIMARY: rgb(37, 95, 244);
   --DUR: 1s;
-  font-size: calc(16px + (24-16) * (100vw - 320px) / (1280 - 320));
+  font-size: calc(16px + (24 - 16)*(100vw - 320px)/(1280 - 320));
 }
 
-body,
-input {
+body, input {
+  color: var(--FG);
+  font: 1em/1.5 Hind, sans-serif;
+}
+
+body {
   color: var(--FG);
   display: flex;
   height: 100vh;
@@ -122,4 +126,47 @@ label {
   }
 }
 
-@keyframes handleToCaret {}
+@keyframes handleToCaret {
+  from {
+    background: currentColor;
+    width: 0.25em;
+    height: 1em;
+    transform: translate(0, -1em) rotate(-45deg) translate(0, 0.875em);
+  }
+
+  25% {
+    background: currentColor;
+    width: 0.25em;
+    height: 1em;
+    transform: translate(0, -1em) rotate(-180deg) translate(0, 0.875em);
+  }
+
+  50%, 62.5% {
+    background: var(--PRIMARY);
+    width: 1px;
+    height: 1.5em;
+    transform: translate(0, -1em) rotate(-180deg) translate(7.5, 2.5em);
+  }
+
+  75%, 99% {
+    background: var(--PRIMARY);
+    width: 1px;
+    height: 1.5em;
+    transform: translate(0, -1em) rotate(-180deg) translate(7.5em, -0.25em);
+  }
+
+  87.5% {
+    background: var(--PRIMARY);
+    width: 1px;
+    height: 1.5em;
+    transform: translate(0, -1em) rotate(-180deg) translate(7.5em, 0.125em);
+  }
+
+  to {
+    background: transparent;
+    width: 1px;
+    height: 1.5em;
+    transform: translate(0,-1em) rotate(-180deg) translate(7.5em,-0.25em);
+  }
+
+}
