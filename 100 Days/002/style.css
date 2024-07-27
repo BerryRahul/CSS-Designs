@@ -1,21 +1,29 @@
-*,
-*::after,
+/* || RESET */
+*, 
+*::after, 
 *::before {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  text-decoration: none;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
 }
 
-a {
-    color: white;
+/* || Variables */
+:root {
+    --BG-COLOR: rgb(34, 37, 49);
+    --COLOR: #6F86FF;
+    --LIGHT-COLOR: whitesmoke;
+    --TRANSLATE: translate(-50%, -50%);
+    --TRANSITION: 0.2s ease-in-out;
 }
-a:visited {
-    color: white;
+
+a, a:visited {
+    color: var(--LIGHT-COLOR);
 }
+
 a:hover {
-    color: #6F86FF;
+    color: var(--COLOR);
 }
 
 body {
@@ -24,7 +32,7 @@ body {
 }
 
 .off-screen-menu {
-    background-color: rgb(34, 37, 49);
+    background-color: var(--BG-COLOR);
     height: 100vh;
     width: 100%;
     max-width: 450px;
@@ -37,7 +45,7 @@ body {
     align-items: center;
     text-align: center;
     font-size: 3rem;
-    transition: 0.3s ease;
+    transition: var(--TRANSITION);
 }
 
 .off-screen-menu.active {
@@ -47,7 +55,7 @@ body {
 .nav {
     padding: 1rem;
     display: flex;
-    background-color: rgb(34, 37, 49);
+    background-color: var(--BG-COLOR);
 }
 
 .nav-ham-menu {
@@ -60,37 +68,37 @@ body {
 .nav-ham-menu span {
     height: 5px;
     width: 100%;
-    background-color: #6f86ff;
+    background-color: var(--COLOR);
     border-radius: 25px;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    transition: 0.3s ease;
+    transform: var(--TRANSLATE);
+    transition: var(--TRANSITION);
 }
 
-.nav-ham-menu span:first-child{
+.nav-ham-menu span:first-child {
     top: 25%;
 }
-
-.nav-ham-menu span:last-child{
+.nav-ham-menu span:last-child {
     top: 75%;
-} 
+}
 
-.nav-ham-menu.active span{
-    background-color: white;
+.nav-ham-menu.active span {
+    background-color: var(--LIGHT-COLOR);
 }
 
 .nav-ham-menu.active span:first-child {
     top: 50%;
-    transform: translate(-50%, -50%) rotate(45deg);
+    transform: var(--TRANSLATE) rotate(45deg);
 }
 
-.nav-ham-menu.active span:nth-child(2){
+.nav-ham-menu.active span:nth-child(2) {
     opacity: 0;
 }
 
-.nav-ham-menu.active span:last-child{
+.nav-ham-menu.active span:last-child {
     top: 50%;
-    transform: translate(-50%, -50%) rotate(-45deg);
+    transform: var(--TRANSLATE) rotate(-45deg);
 }
+
