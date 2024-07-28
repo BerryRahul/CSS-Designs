@@ -73,6 +73,10 @@
   left: 15px;
 }
 
+time {
+  padding-left: 3px;
+}
+
 .revenue {
   top: 14px;
   right: 15px;
