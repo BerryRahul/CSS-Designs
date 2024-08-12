@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pin Input</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="mainScreen" class="pin-screen">
+      <input type="password" class="pin-value" readonly />
+      <hr class="pin-divider" />
+      <div class="pin-keyboard">
+        <button type="button" class="pin-key">1</button>
+        <button type="button" class="pin-key">2</button>
+        <button type="button" class="pin-key">3</button>
+        <button type="button" class="pin-key">4</button>
+        <button type="button" class="pin-key">5</button>
+        <button type="button" class="pin-key">6</button>
+        <button type="button" class="pin-key">7</button>
+        <button type="button" class="pin-key">8</button>
+        <button type="button" class="pin-key">9</button>
+        <button type="button" class="pin-key pin-reset">
+          <ion-icon name="close-outline"></ion-icon>
+        </button>
+        <button type="button" class="pin-key">0</button>
+        <button type="button" class="pin-key pin-enter">
+          <ion-icon name="arrow-forward-circle-outline"></ion-icon>
+        </button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>
